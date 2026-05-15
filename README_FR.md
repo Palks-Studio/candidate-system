@@ -1,7 +1,7 @@
 <p align="center">
   <img src="docs/images/dashboard.png"
        alt="Dashboard recruteur avec scoring automatique des candidatures et gestion des profils"
-       width="600">
+       width="1200">
 </p>
 
 > 🇫🇷 Français | [🇬🇧 English](./README.md)
