@@ -7,7 +7,7 @@
 > 🇫🇷 Français | [🇬🇧 English](./README.md)
 
 ![License](https://img.shields.io/badge/License-LICENSE.md-lightgreen.svg)
-![PHP](https://img.shields.io/badge/PHP-CLI-777BB4?style=flat)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat)
 [![Recruitment System](https://img.shields.io/badge/Recruitment-System-2ea44f?style=flat-square)](https://palks-studio.com/fr/recrutement-sans-saas)
 [![Voir le système](https://img.shields.io/badge/Palks%20Studio-Système%20de%20recrutement-0095b1?style=for-the-badge)](https://palks-studio.com/fr/recrutement-sans-saas)
 
