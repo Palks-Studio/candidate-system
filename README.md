@@ -30,7 +30,6 @@ It intentionally avoids operational procedures and sensitive details.
 
 ## Overview
 
-> 🇫🇷 French version available — English coming soon.
 > Automatic matching recruitment system — PHP 8.x, no database, no SaaS.
 
 CANDIDATE_SYSTEM is an autonomous recruitment engine deployable on any standard Apache / PHP 8.x hosting.
@@ -81,11 +80,11 @@ candidate_system/
    │
    ├── engine.php                     → Scoring engine
    ├── notify.php                     → Acknowledgement email sender
-   ├── LICENCE.md                     → Terms of use and legal framework
+   ├── LICENSE.md                     → Terms of use and legal framework
    │
    └── docs/
        ├── USER_GUIDE.md              → User guide
-       └── README_EN.md               → Technical documentation
+       └── README.md                  → Technical documentation
 ```
 
 
@@ -176,17 +175,17 @@ Each application is stored as a JSON file:
 
 ```json
 {
-    "id": "20260514_143000_abc123",
-    "date": "2026-05-14 14:30:00",
-    "poste": "Job title",
-    "prenom": "First name",
-    "nom": "Last name",
-    "email": "email@applicant.com",
-    "score_final": 74.5,
-    "score_label": "Good fit",
-    "score_detail": {},
-    "reponses": {},
-    "trigger_fields": {}
+  "id": "20260514_143000_abc123",
+  "date": "2026-05-14 14:30:00",
+  "job_title": "Job title",
+  "first_name": "First name",
+  "last_name": "Last name",
+  "email": "email@applicant.com",
+  "final_score": 74.5,
+  "score_label": "Good fit",
+  "score_detail": {},
+  "answers": {},
+  "trigger_fields": {}
 }
 ```
 
