@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/dashboard.png"
+  <img src="docs/images/dashboard_en.png"
        alt="Recruitment system recruiter dashboard with candidate scoring and application management"
        width="1200">
 </p>
