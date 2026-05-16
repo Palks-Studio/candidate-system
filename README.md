@@ -33,7 +33,7 @@ It intentionally avoids operational procedures and sensitive details.
 > 🇫🇷 French version available — English coming soon.
 > Automatic matching recruitment system — PHP 8.x, no database, no SaaS.
 
-CANDIDATE_FLOW is an autonomous recruitment engine deployable on any standard Apache / PHP 8.x hosting.
+CANDIDATE_SYSTEM is an autonomous recruitment engine deployable on any standard Apache / PHP 8.x hosting.
 
 The applicant fills out a structured form. Their answers are automatically scored against a job profile defined by the recruiter. The dashboard displays applications ranked by matching score — from most to least relevant.
 
