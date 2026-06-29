@@ -38,6 +38,8 @@ Le candidat remplit un formulaire structuré. Ses réponses sont scorées automa
 
 Aucune base de données. Aucun SaaS. Aucun abonnement. Les données restent sur le serveur du client.
 
+Curieux de découvrir l'application complète ? La playlist de démonstration est disponible ici : [Voir la playlist complète de démonstration](https://www.youtube.com/watch?v=XvAyDijrie0&list=PLeGrXIBUO5xA)
+
 ---
 
 ## Structure du projet
