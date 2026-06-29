@@ -38,6 +38,8 @@ The applicant fills out a structured form. Their answers are automatically score
 
 No database. No SaaS. No subscription. Data stays on the client's server.
 
+Curious to see the full application? The complete demo playlist is available here: [Watch the Complete Demo Playlist](https://www.youtube.com/watch?v=6MfCHOp23fA&list=PLP79X9pb3KlU)
+
 ---
 
 ## Project Structure
