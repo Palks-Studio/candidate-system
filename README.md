@@ -108,7 +108,7 @@ candidate_system/
 - Campaign closure and reopening from the dashboard  
 - Unique form link per campaign, copyable in one click
 
-[![View the system](https://img.shields.io/badge/Palks%20Studio-Recruitment%20system-0095b1?style=for-the-badge)](https://palks-studio.com/en/recruitment-without-saas)
+[View the system](https://palks-studio.com/en/recruitment-without-saas)
 
 ---
 
