@@ -9,6 +9,8 @@
 ![License](https://img.shields.io/badge/License-LICENSE.md-lightgreen.svg)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat)
 [![Recruitment System](https://img.shields.io/badge/Recruitment-System-2ea44f?style=flat-square)](https://palks-studio.com/en/recruitment-without-saas)
+[![YouTube](https://img.shields.io/badge/YouTube-@Palks__Studio-FF0000?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/@Palks_Studio)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-@Palks__Studio-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/palks-studio/)
 [![View the system](https://img.shields.io/badge/Palks%20Studio-Recruitment%20system-0095b1?style=for-the-badge)](https://palks-studio.com/en/recruitment-without-saas)
 
 <p align="center">
