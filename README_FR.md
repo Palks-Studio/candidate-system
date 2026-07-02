@@ -12,7 +12,6 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-@Palks__Studio-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/palks-studio/)
 [![Voir le système](https://img.shields.io/badge/Palks%20Studio-Système%20de%20recrutement-0095b1?style=for-the-badge)](https://palks-studio.com/fr/recrutement-sans-saas)
 
-
 <p align="center">
   <a href="https://palks-studio.com">
     <img src="https://img.shields.io/badge/Palks%20Studio-Website-0095b1?style=for-the-badge" />
@@ -109,7 +108,7 @@ candidate_system/
 - Fermeture et réouverture de campagne depuis le dashboard  
 - Lien formulaire unique par campagne, copiable en un clic
 
-[![Voir le système](https://img.shields.io/badge/Palks%20Studio-Système%20de%20recrutement-0095b1?style=for-the-badge)](https://palks-studio.com/fr/recrutement-sans-saas)
+[Voir le système](https://palks-studio.com/fr/recrutement-sans-saas)
 
 ---
 
