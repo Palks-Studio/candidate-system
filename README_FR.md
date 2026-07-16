@@ -57,6 +57,7 @@ candidate_system/
 │  ├── file.php                       → Téléchargement sécurisé des fichiers uploadés
 │  ├── extract.php                    → Génération CSV
 │  ├── form.php                       → Formulaire de candidature
+│  ├── campaign.php                   → Formulaire de création et génération d'une nouvelle campagne
 │  └── process.php                    → Traitement, validation, scoring, sauvegarde
 │
 └── core/
@@ -106,7 +107,12 @@ candidate_system/
 - Interface d'administration complète sans intervention technique  
 - Emails automatiques : accusé de réception et email de clôture  
 - Fermeture et réouverture de campagne depuis le dashboard  
-- Lien formulaire unique par campagne, copiable en un clic
+- Lien formulaire unique par campagne, copiable en un clic  
+- Tableau de bord recruteur protégé par mot de passe  
+- Classement automatique des candidats selon leur score de matching  
+- Emails automatiques d'accusé de candidature et de clôture de campagne  
+- Déploiement autonome sur serveur (self-hosted)  
+- Sans IA, sans SaaS et sans base de données
 
 [Voir le système](https://palks-studio.com/fr/recrutement-sans-saas)
 
@@ -139,12 +145,12 @@ contribution = scores[réponse] × (weight / 100) × (global_weight / 100)
 
 **Répartition par défaut :**
 
-| Section                | Poids global |
-|------------------------|--------------|
-| Expériences terrain    | 60%          |
-| Expériences classiques | 20%          |
-| Stack technique        | 15%          |
-| Disponibilité          | 5%           |
+| Section           | Poids global |
+| ----------------- | -----------: |
+| **Études**        |      **20%** |
+| **Expériences**   |      **60%** |
+| **Compétences**   |      **15%** |
+| **Disponibilité** |       **5%** |
 
 Les poids sont entièrement reconfigurables depuis l'interface d'administration.
 
@@ -168,7 +174,9 @@ Les poids sont entièrement reconfigurables depuis l'interface d'administration.
 - Validation des uploads : PDF uniquement, 5 Mo maximum  
 - Session requise pour toutes les pages d'administration  
 - Blocage des doublons par email par campagne  
-- `Options -Indexes` activé sur le dossier public
+- `Options -Indexes` activé sur le dossier public  
+- Protection anti-flood sur les formulaires publics  
+- Validation d'un code d'accès pour les exports de configuration
 
 ---
 
