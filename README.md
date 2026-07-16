@@ -1,16 +1,16 @@
 <p align="center">
-  <img src="docs/images/dashboard_en.png"
-       alt="Recruitment system recruiter dashboard with candidate scoring and application management"
+  <img src="docs/images/dashboard.png"
+       alt="Dashboard recruteur avec scoring automatique des candidatures et gestion des profils"
        width="1200">
 </p>
 
-> 🇬🇧 English | [🇫🇷 Français](./README_FR.md)
+> 🇫🇷 Français | [🇬🇧 English](./README.md)
 
 ![License](https://img.shields.io/badge/License-LICENSE.md-lightgreen.svg)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat)
 [![YouTube](https://img.shields.io/badge/YouTube-@Palks__Studio-FF0000?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/@Palks_Studio)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-@Palks__Studio-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/palks-studio/)
-[![View the system](https://img.shields.io/badge/Palks%20Studio-Recruitment%20system-0095b1?style=for-the-badge)](https://palks-studio.com/en/recruitment-without-saas)
+[![Voir le système](https://img.shields.io/badge/Palks%20Studio-Système%20de%20recrutement-0095b1?style=for-the-badge)](https://palks-studio.com/fr/recrutement-sans-saas)
 
 <p align="center">
   <a href="https://palks-studio.com">
@@ -18,182 +18,190 @@
   </a>
 </p>
 
-# Palks Studio — Autonomous recruitment system  
-**Structured recruitment with automatic candidate scoring, application management and autonomous server deployment**
+# Palks Studio — Système de recrutement autonome  
+**Recrutement structuré avec scoring automatique, gestion des candidatures et déploiement autonome sur serveur**
 
-> This repository is a technical presentation and documentation repository.  
-> It does not contain downloadable source code or production files.
+> Ce dépôt constitue une présentation technique et une documentation du projet.  
+> Il ne contient pas de code source téléchargeable ni de fichiers de production.
 
-This README documents design principles and system architecture.  
-It intentionally avoids operational procedures and sensitive details.
-
----
-
-## Overview
-
-> Automatic matching recruitment system — PHP 8.x, no database, no SaaS.
-
-CANDIDATE_SYSTEM is an autonomous recruitment engine deployable on any standard Apache / PHP 8.x hosting.
-
-The applicant fills out a structured form. Their answers are automatically scored against a job profile defined by the recruiter. The dashboard displays applications ranked by matching score — from most to least relevant.
-
-No database. No SaaS. No subscription. Data stays on the client's server.
-
-Curious to see the full application? The complete demo playlist is available here: [Watch the Complete Demo Playlist](https://www.youtube.com/watch?v=6MfCHOp23fA&list=PLP79X9pb3KlU)
+Ce README documente les principes de conception et l’architecture du système.  
+Il évite volontairement toute procédure opérationnelle ou détail sensible.
 
 ---
 
-## Project Structure
+## Présentation
+
+> Système de recrutement par matching automatique — PHP 8.x, sans base de données, sans SaaS.
+
+CANDIDATE_SYSTEM est un moteur de recrutement autonome déployable sur tout hébergement Apache / PHP 8.x standard.
+
+Le candidat remplit un formulaire structuré. Ses réponses sont scorées automatiquement contre un profil de poste défini par le recruteur. Le dashboard affiche les candidatures classées par score de matching — du plus pertinent au moins pertinent.
+
+Aucune base de données. Aucun SaaS. Aucun abonnement. Les données restent sur le serveur du client.
+
+Curieux de découvrir l'application complète ? La playlist de démonstration est disponible ici : [Voir la playlist complète de démonstration](https://www.youtube.com/watch?v=XvAyDijrie0&list=PLeGrXIBUO5xA)
+
+---
+
+## Structure du projet
 
 ```
 candidate_system/
 │
 ├── public/
-│  ├── panel.php                      → Administrator interface
-│  ├── record.php                     → Detailed application view
-│  ├── finalize.php                   → Campaign closing and cleanup
-│  ├── success.php                    → Post-submission confirmation page
-│  ├── overview.php                   → Recruiter dashboard (restricted access)
-│  ├── file.php                       → Secure uploaded file download
-│  ├── extract.php                    → CSV generation
-│  ├── form.php                       → Application form
-│  └── process.php                    → Processing, validation, scoring, storage
+│  ├── panel.php                      → Interface administrateur
+│  ├── record.php                     → Vue détaillée d'une candidature
+│  ├── finalize.php                   → Fermeture et purge de la campagne
+│  ├── success.php                    → Page de confirmation post-envoi
+│  ├── overview.php                   → Dashboard recruteur (accès restreint)
+│  ├── file.php                       → Téléchargement sécurisé des fichiers uploadés
+│  ├── extract.php                    → Génération CSV
+│  ├── form.php                       → Formulaire de candidature
+│  ├── campaign.php                   → Formulaire de création et génération d'une nouvelle campagne
+│  └── process.php                    → Traitement, validation, scoring, sauvegarde
 │
 └── core/
    ├── settings/
-   │   ├── init.php                   → Centralized absolute paths
-   │   └── profile.php                → User data
+   │   ├── init.php                   → Chemins absolus centralisés
+   │   └── profile.php                → Données utilisateur
    │
    ├── presets/
-   │   ├── fields.json                → Default question template
-   │   └── template.php               → Default profile template
+   │   ├── fields.json                → template questions par défaut
+   │   └── template.php               → template profil par défaut
    │
-   ├── storage/                       → Campaign storage
+   ├── storage/
    │   └── batch_1/
    │        ├── settings/
-   │        │   ├── fields.json       → Questions and scoring configuration
-   │        │   └── template.php      → Job profile configuration
+   │        │   ├── fields.json       → Configuration des questions et scoring
+   │        │   └── template.php      → Profil du poste
    │        │
    │        └── records/
-   │            ├── entries/          → JSON applications
-   │            ├── files/            → Uploaded CVs and documents
-   │            ├── archives/         → (reserved)
-   │            ├── logs/             → (reserved)
-   │            └── closed.lock       → Campaign closure lock
+   │            ├── entries/          → Candidatures JSON
+   │            ├── files/            → CV et documents uploadés
+   │            ├── archives/         → (réservé)
+   │            ├── logs/             → (réservé)
+   │            └── closed.lock       → Verrou de fermeture de campagne
    │
-   ├── engine.php                     → Scoring engine
-   ├── notify.php                     → Acknowledgement email sender
-   ├── LICENSE.md                     → Terms of use and legal framework
+   ├── engine.php                     → Moteur de calcul du score
+   ├── notify.php                     → Envoi de l'accusé de réception
+   ├── LICENCE.md                     → Conditions d’utilisation et cadre légal
    │
    └── docs/
-       ├── USER_GUIDE.md              → User guide
-       └── README.md                  → Technical documentation
+       ├── GUIDE_UTILISATEUR.md       → Guide utilisateur
+       └── README_FR.md               → Documentation technique
 ```
 
 
 ---
 
-## Features
+## Fonctionnalités
 
-- Multi-section application form with conditional fields  
-- Automatic multi-criteria scoring (section weights, question weights, per-answer scores)  
-- Configurable penalty rules on specific answers  
-- Password-protected recruiter dashboard  
-- Unlimited multi-campaign management — each campaign is fully independent  
-- Detailed applicant view with per-section scores and progress bars  
-- Tech stack display with matched skills highlighted  
-- CSV export compatible with Excel (UTF-8 BOM, `;` separator)  
-- Full administration interface — no technical knowledge required  
-- Automatic emails: confirmation receipt and campaign closure notification  
-- Campaign closure and reopening from the dashboard  
-- Unique form link per campaign, copyable in one click
+- Formulaire de candidature multi-sections avec champs conditionnels  
+- Scoring automatique multi-critères (poids sections, poids questions, scores par réponse)  
+- Malus configurables sur réponses spécifiques  
+- Dashboard recruteur protégé par mot de passe  
+- Gestion multi-campagnes illimitées — chaque campagne est indépendante  
+- Vue détaillée d'une candidature avec scores par section et barres de progression  
+- Stack technique avec mise en évidence des compétences matchées  
+- Export CSV compatible Excel (UTF-8 BOM, séparateur `;`)  
+- Interface d'administration complète sans intervention technique  
+- Emails automatiques : accusé de réception et email de clôture  
+- Fermeture et réouverture de campagne depuis le dashboard  
+- Lien formulaire unique par campagne, copiable en un clic  
+- Tableau de bord recruteur protégé par mot de passe  
+- Classement automatique des candidats selon leur score de matching  
+- Emails automatiques d'accusé de candidature et de clôture de campagne  
+- Déploiement autonome sur serveur (self-hosted)  
+- Sans IA, sans SaaS et sans base de données
 
-[View the system](https://palks-studio.com/en/recruitment-without-saas)
+[Voir le système](https://palks-studio.com/fr/recrutement-sans-saas)
 
 ---
 
-## Requirements
+## Prérequis
 
 - PHP 8.x  
-- Apache with `mod_rewrite` enabled  
-- FTP or SSH access  
-- No database  
-- No external dependencies (no Composer, no npm)
+- Apache avec `mod_rewrite` activé  
+- Accès FTP ou SSH  
+- Aucune base de données  
+- Aucune dépendance externe (pas de Composer, pas de npm)
 
 ---
 
-## Scoring Logic
+## Logique de scoring
 
-The final score is calculated across three nested levels:
+Le score final est calculé sur trois niveaux imbriqués :
 
 ```
-contribution = scores[answer] × (weight / 100) × (global_weight / 100)
+contribution = scores[réponse] × (weight / 100) × (global_weight / 100)
 ```
 
 
-| Level | Parameter       | Description                               |
-|-------|-----------------|-------------------------------------------|
-| 1     | `global_weight` | Section weight in the final score         |
-| 2     | `weight`        | Question weight within its section        |
-| 3     | `scores`        | Raw score assigned to each answer         |
+| Niveau | Paramètre       | Description                              |
+|--------|-----------------|------------------------------------------|
+| 1      | `global_weight` | Poids de la section dans le score final  |
+| 2      | `weight`        | Poids de la question dans sa section     |
+| 3      | `scores`        | Score brut attribué à chaque réponse     |
 
-**Default distribution:**
+**Répartition par défaut :**
 
-| Section              | Global weight |
-|----------------------|---------------|
-| Field experience     | 60%           |
-| Classic experience   | 20%           |
-| Tech stack           | 15%           |
-| Availability         | 5%            |
+| Section           | Poids global |
+| ----------------- | -----------: |
+| **Études**        |      **20%** |
+| **Expériences**   |      **60%** |
+| **Compétences**   |      **15%** |
+| **Disponibilité** |       **5%** |
 
-Weights are fully reconfigurable from the administration interface.
+Les poids sont entièrement reconfigurables depuis l'interface d'administration.
 
-**Score levels:**
+**Niveaux de score :**
 
 | Score | Label       |
 |-------|-------------|
 | ≥ 80  | Excellent   |
-| ≥ 60  | Good fit    |
-| ≥ 40  | Partial     |
-| < 40  | Insufficient|
+| ≥ 60  | Bon profil  |
+| ≥ 40  | Partiel     |
+| < 40  | Insuffisant |
 
 ---
 
-## Security
+## Sécurité
 
-- Strict public / private separation — no config files accessible via the web  
-- CSRF protection on the application form  
-- HTTP security headers on all pages  
-- Full sanitization of user inputs  
-- Upload validation: PDF only, 5 MB maximum  
-- Session required for all administration pages  
-- Email deduplication per campaign  
-- `Options -Indexes` enabled on the public directory
+- Séparation stricte public / privé — aucun fichier de config accessible via le web  
+- Protection CSRF sur le formulaire candidat  
+- Headers HTTP de sécurité sur toutes les pages  
+- Sanitization complète des entrées utilisateur  
+- Validation des uploads : PDF uniquement, 5 Mo maximum  
+- Session requise pour toutes les pages d'administration  
+- Blocage des doublons par email par campagne  
+- `Options -Indexes` activé sur le dossier public  
+- Protection anti-flood sur les formulaires publics  
+- Validation d'un code d'accès pour les exports de configuration
 
 ---
 
-## Data Storage
+## Stockage
 
-Each application is stored as a JSON file:
+Chaque candidature est sauvegardée en JSON :
 
 ```json
 {
-  "id": "20260514_143000_abc123",
-  "date": "2026-05-14 14:30:00",
-  "job_title": "Job title",
-  "first_name": "First name",
-  "last_name": "Last name",
-  "email": "email@applicant.com",
-  "final_score": 74.5,
-  "score_label": "Good fit",
-  "score_detail": {},
-  "answers": {},
-  "trigger_fields": {}
+    "id": "20260514_143000_abc123",
+    "date": "2026-05-14 14:30:00",
+    "poste": "Intitulé du poste",
+    "prenom": "Prénom",
+    "nom": "Nom",
+    "email": "email@candidat.com",
+    "score_final": 74.5,
+    "score_label": "Bon profil",
+    "score_detail": {},
+    "reponses": {},
+    "trigger_fields": {}
 }
 ```
 
 
 ---
 
-© Palks Studio — see LICENSE.md  
+© Palks Studio — voir LICENSE.md  
 - https://palks-studio.com
