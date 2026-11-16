@@ -34,7 +34,7 @@ Il évite volontairement toute procédure opérationnelle ou détail sensible.
 
 > Système de recrutement par matching automatique — PHP 8.x, sans base de données, sans SaaS.
 
-CANDIDATE_SYSTEM est un moteur de recrutement autonome déployable sur tout hébergement Apache / PHP 8.x standard.
+Ce système de recrutement autonome est conçu pour être déployé sur un hébergement Apache / PHP 8.x standard.
 
 Le candidat remplit un formulaire structuré. Ses réponses sont scorées automatiquement contre un profil de poste défini par le recruteur. Le dashboard affiche les candidatures classées par score de matching — du plus pertinent au moins pertinent.
 
@@ -51,7 +51,7 @@ Pour aller plus loin, un article technique présente la conception du système d
 ## Structure du projet
 
 ```
-candidate_system/
+candidate-system/
 │
 ├── public/
 │  ├── panel.php                      → Interface administrateur
