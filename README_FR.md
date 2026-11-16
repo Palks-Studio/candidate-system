@@ -10,6 +10,7 @@
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat)
 [![YouTube](https://img.shields.io/badge/YouTube-@Palks__Studio-FF0000?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/@Palks_Studio)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-@Palks__Studio-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/palks-studio/)
+[![DEV.to](https://img.shields.io/badge/DEV.to-Technical%20Article-7C3AED?style=flat&logo=devdotto&logoColor=white)](https://dev.to/palks_studio/i-built-a-full-recruitment-system-in-php-no-database-no-saas-no-subscription-ff1)
 [![Voir le système](https://img.shields.io/badge/Palks%20Studio-Système%20de%20recrutement-0095b1?style=for-the-badge)](https://palks-studio.com/fr/recrutement-sans-saas)
 
 <p align="center">
@@ -41,6 +42,10 @@ Aucune base de données. Aucun SaaS. Aucun abonnement. Les données restent sur 
 
 Curieux de découvrir l'application complète ? La playlist de démonstration est disponible ici : [Voir la playlist complète de démonstration](https://www.youtube.com/watch?v=XvAyDijrie0&list=PLeGrXIBUO5xA)
 
+Pour aller plus loin, un article technique présente la conception du système de recrutement, son moteur de scoring et les choix d'architecture qui permettent de proposer une solution autonome, sans base de données ni dépendance SaaS.
+
+👉 [I Built a Full Recruitment System in PHP (No Database, No SaaS, No Subscription)](https://dev.to/palks_studio/i-built-a-full-recruitment-system-in-php-no-database-no-saas-no-subscription-ff1) (DEV.to, en anglais)
+
 ---
 
 ## Structure du projet
@@ -51,7 +56,7 @@ candidate_system/
 ├── public/
 │  ├── panel.php                      → Interface administrateur
 │  ├── record.php                     → Vue détaillée d'une candidature
-│  ├── finalize.php                   → Fermeture et purge de la campagne
+│  ├── finalize.php                   → Clôture définitive volontaire et purge de la campagne
 │  ├── success.php                    → Page de confirmation post-envoi
 │  ├── overview.php                   → Dashboard recruteur (accès restreint)
 │  ├── file.php                       → Téléchargement sécurisé des fichiers uploadés
@@ -97,20 +102,19 @@ candidate_system/
 ## Fonctionnalités
 
 - Formulaire de candidature multi-sections avec champs conditionnels  
-- Scoring automatique multi-critères (poids sections, poids questions, scores par réponse)  
+- Scoring automatique multi-critères (poids des sections, poids des questions, scores par réponse)  
 - Malus configurables sur réponses spécifiques  
+- Classement automatique des candidats selon leur score de matching  
 - Dashboard recruteur protégé par mot de passe  
-- Gestion multi-campagnes illimitées — chaque campagne est indépendante  
+- Gestion multi-campagnes illimitée, chaque campagne étant indépendante  
 - Vue détaillée d'une candidature avec scores par section et barres de progression  
 - Stack technique avec mise en évidence des compétences matchées  
 - Export CSV compatible Excel (UTF-8 BOM, séparateur `;`)  
 - Interface d'administration complète sans intervention technique  
 - Emails automatiques : accusé de réception et email de clôture  
 - Fermeture et réouverture de campagne depuis le dashboard  
+- Clôture définitive volontaire avec purge des données de la campagne  
 - Lien formulaire unique par campagne, copiable en un clic  
-- Tableau de bord recruteur protégé par mot de passe  
-- Classement automatique des candidats selon leur score de matching  
-- Emails automatiques d'accusé de candidature et de clôture de campagne  
 - Déploiement autonome sur serveur (self-hosted)  
 - Sans IA, sans SaaS et sans base de données
 
